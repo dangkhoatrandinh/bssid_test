@@ -1,5 +1,4 @@
-Main Topic
-*Tabspace* Subtopic1
-*Tabspace**Tabspace* Some Points for subtopic1
-*Tabspace* Subtopic2
-*Tabspace**Tabspace* Some Points for subtopic2 
+<b>TO RUN: </b> <br />
+ <t>npm init <br /> 
+ react-native run-android <br />
+  On devices: <b>TURN ON GPS </b>
