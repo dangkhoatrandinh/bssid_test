@@ -1,8 +1,5 @@
-﻿# bssid_test
-To run:
-  PC
-    npm install 
-    npx react-native run-android
-  Android: 
-    GPS on
-    GPS grant access
+Main Topic
+*Tabspace* Subtopic1
+*Tabspace**Tabspace* Some Points for subtopic1
+*Tabspace* Subtopic2
+*Tabspace**Tabspace* Some Points for subtopic2 
