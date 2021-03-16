@@ -1,3 +1,8 @@
 ﻿# bssid_test
-To run: 
-  npm install 
+To run:
+  PC
+    npm install 
+    npx react-native run-android
+  Android: 
+    GPS on
+    GPS grant access
