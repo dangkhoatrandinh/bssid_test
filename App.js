@@ -1,18 +1,20 @@
 import React from "react";
-import { Button, PermissionsAndroid, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { Button, PermissionsAndroid, SafeAreaView, StatusBar, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import {NetworkInfo} from 'react-native-network-info';
 import wifi from 'react-native-android-wifi';
 import publicIp from 'public-ip'
+import 'react-native-get-random-values'
+import { v4 as uuidv4 } from 'uuid'
+import UUID from 'uuid'
 const requestLocationPermission = async () => {
   try {
-    const granted = await PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
-    );
+    let granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
       alert("Permission Granted");
-    } else {
-      console.log("Camera permission denied");
-    }
+    } 
+    else {
+      alert("Permission Not Granted");
+    } 
   } catch (err) {
     console.warn(err);
   }
@@ -32,21 +34,21 @@ const getPublicIPv4 = async () => {
   alert(await publicIp.v4());
 }
 
-const getPublicIPv6 = async () => {
-  alert(await publicIp.v6());
+const getUUIDv4 = () => {
+  alert(uuidv4());
 }
+
 const App = () => (
   <View style={styles.container}>
     <Text style={styles.item}>SSID + BSSID</Text>
     <Button style={{margin: 10}} title="requestLocationPermission" onPress={requestLocationPermission} />
     <Button title="getSSID" onPress={getSSID} />
     <Button title="getBSSID" onPress={getBSSID} />
-    <Button title="getIPv4" onPress={getPublicIPv4} />
-    {/* <Button title="getIPv6" onPress={getPublicIPv6} /> */}
+    <Button title="getIPv4" onPress={getPublicIPv4} />  
+    <Button title="getUUIDv4" onPress={getUUIDv4} />   
+
   </View>
 );
-
-
 
 const styles = StyleSheet.create({
   container: {
